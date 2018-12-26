@@ -1,0 +1,6 @@
+This is a simple app that does the following:
+1. gets a random cat fact from an online api.
+2. gets a random cat image from an online api.
+
+What did I used to make it?
+JSONObject class along with Ion and Picasso library. Also, a XML to JSON converter. 
