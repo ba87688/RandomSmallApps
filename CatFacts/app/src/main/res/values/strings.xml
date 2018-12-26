@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">CatFacts</string>
+    <string name="JokeButton">Give me a new fact!</string>
+    <string name="JokeText">Click button to get a new fact.</string>
+
+</resources>
