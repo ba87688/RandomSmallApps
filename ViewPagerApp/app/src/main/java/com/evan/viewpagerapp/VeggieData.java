@@ -19,6 +19,9 @@ public class VeggieData {
 
     public static final VeggieData[] veggies = {
             new VeggieData("Broccoli", R.drawable.broccoli),
+            new VeggieData("Brussel Sprouts", R.drawable.brussels_sprouts),
+            new VeggieData("Brussel Sprouts", R.drawable.brussels_sprouts),
+            new VeggieData("Broccoli", R.drawable.broccoli),
             new VeggieData("Brussel Sprouts", R.drawable.brussels_sprouts)
     };
 
