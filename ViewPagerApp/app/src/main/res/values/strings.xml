@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">ViewPagerApp</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+
+    <string name="veggies_tab">Veggies</string>
+    <string name="fruits_tab">Fruits</string>
+    <string name="ham_tab">Ham</string>
+</resources>
