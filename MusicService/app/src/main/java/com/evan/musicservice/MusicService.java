@@ -35,7 +35,7 @@ public class MusicService extends Service {
                 Notification.Builder builder = new Notification.Builder(MusicService.this).
                         setContentTitle("Music has started").
                         setContentText("Bonjour").
-                        setSmallIcon(R.drawable.ic_launcher_background);
+                        setSmallIcon(R.drawable.baseline);
 
 
                 //make the notification clickable by builidng an intent

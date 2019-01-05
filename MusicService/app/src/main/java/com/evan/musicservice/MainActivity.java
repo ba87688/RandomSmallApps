@@ -47,7 +47,7 @@ public class MainActivity extends AppCompatActivity {
         @Override
         public void onReceive(Context context, Intent intent) {
 
-            Toast.makeText(MainActivity.this,"The music player",Toast.LENGTH_LONG).show();
+            Toast.makeText(MainActivity.this,"The crappy music player",Toast.LENGTH_LONG).show();
         }
     }
 }
