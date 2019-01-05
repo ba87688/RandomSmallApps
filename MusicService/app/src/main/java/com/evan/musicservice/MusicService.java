@@ -2,6 +2,7 @@ package com.evan.musicservice;
 
 import android.app.Notification;
 import android.app.NotificationManager;
+import android.app.PendingIntent;
 import android.app.Service;
 import android.content.Context;
 import android.content.Intent;
@@ -35,6 +36,15 @@ public class MusicService extends Service {
                         setContentTitle("Music has started").
                         setContentText("Bonjour").
                         setSmallIcon(R.drawable.ic_launcher_background);
+
+
+                //make the notification clickable by builidng an intent
+                Intent intent1 = new Intent(MusicService.this, MainActivity.class);
+                PendingIntent pendingIntent = PendingIntent.
+                        getActivity(MusicService.this, 0,intent1,0);
+                builder.setContentIntent(pendingIntent);
+
+
                 Notification notification = builder.build();
 
                 NotificationManager manager = (NotificationManager)getSystemService(Context.NOTIFICATION_SERVICE);
