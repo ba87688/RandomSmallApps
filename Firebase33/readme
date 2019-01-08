@@ -1,0 +1,4 @@
+This is a very simple app that
+1. connects to the Firebase realtime database
+2. write data to the database
+3. reads data from database and shows the data via textview 
