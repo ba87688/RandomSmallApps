@@ -1,5 +1,6 @@
 package com.evan.catfacts;
 
+import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -22,6 +23,7 @@ public class MainActivity extends AppCompatActivity {
     private Button jokeButton;
     private TextView jokeText;
     private ImageView catImage;
+    private boolean networkCool;
     String url;
     //https://thecatapi.com/api/images/get?format=json&resultsperpage=1
    // https://thecatapi.com/api/images/get?resultsperpage=1
@@ -29,6 +31,10 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+
+        networkCool = NetworkHelper.hasNetwork(this);
+        Log.d("HAS Network? " ,": " +networkCool);
 
         jokeButton = (Button) findViewById(R.id.jokeButton);
         jokeText= (TextView)findViewById(R.id.jokeText);
@@ -50,14 +56,12 @@ public class MainActivity extends AppCompatActivity {
                 load("https://api.thecatapi.com/api/images/get?format=xml&resultsperpage=1").
                 asString().
                 setCallback(new FutureCallback<String>() {
-                    //this will be the return, a json object
 
 
                     @Override
                     public void onCompleted(Exception e, String result) {
                         //data has arrived
                         try {
-                            //create a json object of the JSON data
                             XmlToJson xmlToJson = new XmlToJson.
                                     Builder(result).
                                     build();
