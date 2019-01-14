@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">NotePad+</string>
+    <string name="create_sample_data">Create sample data</string>
+    <string name="delete_all">Delete all</string>
+    <string name="you_sure">Are you sure? all?</string>
+    <string name="title_activity_editor">EditorActivity</string>
+    <string name="newNote">New Note</string>
+    <string name="delete">Delete</string>
+
+</resources>
