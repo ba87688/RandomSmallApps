@@ -11,7 +11,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/inputOfUser"
-        android:text="000000000"
+        android:text=" "
         android:textSize="30sp"
         android:layout_marginTop="3dp"
         android:textAlignment="textEnd"/>
@@ -21,6 +21,6 @@
         android:id="@+id/userResult"
         android:textAlignment="textEnd"
         android:textSize="50sp"
-        android:text="555"/>
+        android:text="0"/>
 
 </LinearLayout>

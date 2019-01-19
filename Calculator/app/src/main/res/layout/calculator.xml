@@ -9,9 +9,10 @@
     android:rowCount="5"
     android:layout_margin="@dimen/margin">
     <Button
-        android:text="C"
+        android:text="@string/C"
         android:id="@+id/button_clear"
         style="@style/FunctionalButtons"
+        android:onClick="process"
         android:layout_column="0"
         android:layout_row="0"
         android:layout_marginTop="@dimen/margin"
@@ -21,10 +22,12 @@
 
         />
     <Button
-        android:text="%"
+        android:text="@string/percentage"
         android:id="@+id/button_percentage"
         style="@style/FunctionalButtons"
         android:layout_column="1"
+        android:onClick="process"
+
         android:layout_row="0"
         android:layout_marginTop="@dimen/margin"
         android:layout_marginLeft="@dimen/margin"
@@ -33,10 +36,12 @@
 
         />
     <Button
-    android:text="/"
+    android:text="@string/divide"
     android:id="@+id/button_divide"
     style="@style/FunctionalButtons"
-    android:layout_column="2"
+        android:onClick="process"
+
+        android:layout_column="2"
     android:layout_row="0"
     android:layout_marginTop="@dimen/margin"
     android:layout_marginLeft="@dimen/margin"
@@ -45,8 +50,9 @@
 
         />
     <Button
-        android:text="x"
+        android:text="@string/multiply"
         android:id="@+id/button_multiply"
+        android:onClick="process"
         style="@style/FunctionalButtons"
         android:layout_column="3"
         android:layout_row="0"
@@ -56,7 +62,7 @@
         android:layout_marginRight="@dimen/margin"
         />
     <Button
-        android:text="7"
+        android:text="@string/seven"
         android:id="@+id/button_seven"
         style="@style/NumbersButtons"
         android:layout_column="0"
@@ -65,9 +71,11 @@
         android:layout_marginTop="@dimen/margin"
         android:layout_marginLeft="@dimen/margin"
         android:layout_marginRight="@dimen/margin"
+        android:onClick="process"
+
         />
     <Button
-        android:text="8"
+        android:text="@string/eight"
         android:id="@+id/button_eight"
         style="@style/NumbersButtons"
         android:layout_column="1"
@@ -76,9 +84,11 @@
         android:layout_marginTop="@dimen/margin"
         android:layout_marginLeft="@dimen/margin"
         android:layout_marginRight="@dimen/margin"
+        android:onClick="process"
+
         />
     <Button
-        android:text="9"
+        android:text="@string/nine"
         android:id="@+id/button_nine"
         style="@style/NumbersButtons"
         android:layout_column="2"
@@ -87,9 +97,11 @@
         android:layout_marginTop="@dimen/margin"
         android:layout_marginLeft="@dimen/margin"
         android:layout_marginRight="@dimen/margin"
+        android:onClick="process"
+
         />
     <Button
-        android:text="-"
+        android:text="@string/minus"
         android:id="@+id/button_minus"
         style="@style/FunctionalButtons"
         android:layout_column="3"
@@ -98,10 +110,12 @@
         android:layout_marginTop="@dimen/margin"
         android:layout_marginLeft="@dimen/margin"
         android:layout_marginRight="@dimen/margin"
+        android:onClick="process"
+
         />
 
     <Button
-        android:text="4"
+        android:text="@string/four"
         android:id="@+id/button_four"
         style="@style/NumbersButtons"
         android:layout_column="0"
@@ -110,9 +124,11 @@
         android:layout_marginTop="@dimen/margin"
         android:layout_marginLeft="@dimen/margin"
         android:layout_marginRight="@dimen/margin"
+        android:onClick="process"
+
         />
     <Button
-        android:text="5"
+        android:text="@string/five"
         android:id="@+id/button_five"
         style="@style/NumbersButtons"
         android:layout_column="1"
@@ -121,9 +137,11 @@
         android:layout_marginTop="@dimen/margin"
         android:layout_marginLeft="@dimen/margin"
         android:layout_marginRight="@dimen/margin"
+        android:onClick="process"
+
         />
     <Button
-        android:text="6"
+        android:text="@string/six"
         android:id="@+id/button_six"
         style="@style/NumbersButtons"
         android:layout_column="2"
@@ -132,9 +150,11 @@
         android:layout_marginTop="@dimen/margin"
         android:layout_marginLeft="@dimen/margin"
         android:layout_marginRight="@dimen/margin"
+        android:onClick="process"
+
         />
     <Button
-        android:text="+"
+        android:text="@string/add"
         android:id="@+id/button_plus"
         style="@style/FunctionalButtons"
         android:layout_column="3"
@@ -143,11 +163,13 @@
         android:layout_marginTop="@dimen/margin"
         android:layout_marginLeft="@dimen/margin"
         android:layout_marginRight="@dimen/margin"
+        android:onClick="process"
+
         />
 
     <!--new row-->
     <Button
-        android:text="1"
+        android:text="@string/one"
         android:id="@+id/button_one"
         style="@style/NumbersButtons"
         android:layout_column="0"
@@ -156,9 +178,11 @@
         android:layout_marginTop="@dimen/margin"
         android:layout_marginLeft="@dimen/margin"
         android:layout_marginRight="@dimen/margin"
+        android:onClick="process"
+
         />
     <Button
-        android:text="2"
+        android:text="@string/two"
         android:id="@+id/button_two"
         style="@style/NumbersButtons"
         android:layout_column="1"
@@ -167,9 +191,11 @@
         android:layout_marginTop="@dimen/margin"
         android:layout_marginLeft="@dimen/margin"
         android:layout_marginRight="@dimen/margin"
+        android:onClick="process"
+
         />
     <Button
-        android:text="3"
+        android:text="@string/three"
         android:id="@+id/button_three"
         style="@style/NumbersButtons"
         android:layout_column="2"
@@ -178,9 +204,11 @@
         android:layout_marginTop="@dimen/margin"
         android:layout_marginLeft="@dimen/margin"
         android:layout_marginRight="@dimen/margin"
+        android:onClick="process"
+
         />
     <Button
-        android:text="="
+        android:text="@string/equal"
         android:id="@+id/button_equal"
         style="@style/EqualButtons"
         android:layout_column="3"
@@ -191,13 +219,15 @@
         android:layout_marginRight="@dimen/margin"
         android:layout_gravity="fill_vertical"
         android:layout_rowSpan="2"
+        android:onClick="process"
+
 
         />
 
     <!--new row-->
 
     <Button
-        android:text="."
+        android:text="@string/dot"
         android:id="@+id/button_dot"
         style="@style/NumbersButtons"
         android:layout_column="0"
@@ -206,9 +236,11 @@
         android:layout_marginTop="@dimen/margin"
         android:layout_marginLeft="@dimen/margin"
         android:layout_marginRight="@dimen/margin"
+        android:onClick="process"
+
         />
     <Button
-        android:text="0"
+        android:text="@string/zero"
         android:id="@+id/button_zero"
         style="@style/NumbersButtons"
         android:layout_column="1"
@@ -217,9 +249,11 @@
         android:layout_marginTop="@dimen/margin"
         android:layout_marginLeft="@dimen/margin"
         android:layout_marginRight="@dimen/margin"
+        android:onClick="process"
+
         />
     <Button
-        android:text="00"
+        android:text="@string/erase"
         android:id="@+id/button_zero2"
         style="@style/NumbersButtons"
         android:layout_column="2"
@@ -228,6 +262,8 @@
         android:layout_marginTop="@dimen/margin"
         android:layout_marginLeft="@dimen/margin"
         android:layout_marginRight="@dimen/margin"
+        android:onClick="process"
+
         />
 
 
