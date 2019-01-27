@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">RandomRestaurant</string>
+    <string name="front_page_text">Listen, you want eat good?\n Alright, then order food from us. </string>
+    <string name="title_activity_main_nav_drawer">MainNavDrawer</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+</resources>
