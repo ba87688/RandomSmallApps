@@ -38,6 +38,10 @@ public class LogIn extends AppCompatActivity {
         signIn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                if (userName.getText().toString().equals("")|password.getText().toString().equals("")) {
+                    Toast.makeText(LogIn.this, "Input username and password", Toast.LENGTH_SHORT).show();
+
+                } else {
 
                     user_table.addValueEventListener(new ValueEventListener() {
                         @Override
@@ -79,7 +83,7 @@ public class LogIn extends AppCompatActivity {
                         }
                     });
                 }
-
+            }
         });
 
 
