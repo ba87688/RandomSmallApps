@@ -1,5 +1,7 @@
 package com.evan.randomrestaurant;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -14,6 +16,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -22,6 +25,7 @@ import com.evan.randomrestaurant.Interfaces.ItemClickListener;
 import com.evan.randomrestaurant.Model.Category;
 import com.evan.randomrestaurant.ViewHolder.MenuViewHolder;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.squareup.picasso.Picasso;
@@ -33,6 +37,7 @@ public class MainNavDrawer extends AppCompatActivity
     DatabaseReference categoryDatabaseReference;
     TextView name;
     RecyclerView recyclerView;
+    public final static String  POSITION = "position";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -88,7 +93,7 @@ public class MainNavDrawer extends AppCompatActivity
         FirebaseRecyclerAdapter<Category,MenuViewHolder> adapter = new FirebaseRecyclerAdapter<Category, MenuViewHolder>
                 (Category.class,R.layout.menu_items,MenuViewHolder.class, categoryDatabaseReference) {
             @Override
-            protected void populateViewHolder(MenuViewHolder viewHolder, Category model, int position) {
+            protected void populateViewHolder(MenuViewHolder viewHolder, final Category model, int position) {
                 viewHolder.textManuName.setText(model.getName());
                 Picasso.get().load(model.getImage()).into(viewHolder.imageView);
                 final Category clickedItem = model;
@@ -96,6 +101,13 @@ public class MainNavDrawer extends AppCompatActivity
                     @Override
                     public void onClick(View v, int position, boolean clicked) {
                         Toast.makeText(MainNavDrawer.this, "HOOOOOO "+clickedItem.getName(), Toast.LENGTH_SHORT).show();
+
+                        Intent intent = new Intent(MainNavDrawer.this, foodDetailActivity.class);
+                        intent.putExtra(POSITION, position);
+                        intent.putExtra("name", model.getName());
+                        intent.putExtra("image", model.getImage());
+
+                        startActivity(intent);
                     }
                 });
             }
@@ -140,6 +152,22 @@ public class MainNavDrawer extends AppCompatActivity
     public boolean onNavigationItemSelected(MenuItem item) {
         // Handle navigation view item clicks here.
         int id = item.getItemId();
+        if(id == R.id.nav_menu){
+
+
+        }
+        if(id == R.id.nav_callus){
+            String phone = "+7148252135";
+            Intent intent = new Intent(Intent.ACTION_DIAL, Uri.fromParts("tel",phone,null));
+            startActivity(intent);
+        }
+        if(id == R.id.nav_sign_out){
+            FirebaseAuth.getInstance().signOut();
+
+        }
+        if(id == R.id.nav_music){
+
+        }
 //
 //        if (id == R.id.nav_camera) {
 //            // Handle the camera action

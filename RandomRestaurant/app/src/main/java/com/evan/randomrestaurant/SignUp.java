@@ -44,15 +44,22 @@ public class SignUp extends AppCompatActivity {
                             Toast.makeText(SignUp.this, "This phone number is already in use.", Toast.LENGTH_SHORT).show();
 
                         }
+
                         else{
-                            //create a new user and add them to the database
-                            User newUser = new User(fullName.getText().toString(),password.getText().toString());
+                            if(fullName.getText().toString().equals("") | password.getText().toString().equals("")){
+                            Toast.makeText(SignUp.this, "input name and password.", Toast.LENGTH_SHORT).show();
+
+                            }
+                            else {
+                                //create a new user and add them to the database
+                                User newUser = new User(fullName.getText().toString(), password.getText().toString());
 //                            add the user to database
-                            user_table.child(phoneNumber.getText().toString()).setValue(newUser);
-                            Toast.makeText(SignUp.this, "Successfully signed up.", Toast.LENGTH_SHORT).show();
+                                user_table.child(phoneNumber.getText().toString()).setValue(newUser);
+                                Toast.makeText(SignUp.this, "Successfully signed up.", Toast.LENGTH_SHORT).show();
 
 //                            close activity
-                            finish();
+                                finish();
+                            }
                         }
                     }
 

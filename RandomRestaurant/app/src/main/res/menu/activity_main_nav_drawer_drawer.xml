@@ -7,31 +7,24 @@
         <item
             android:id="@+id/nav_menu"
             android:icon="@drawable/ic_restaurant_menu_black_24dp"
-            android:title="Menu" />
+            android:title="@string/menu" />
         <item
-            android:id="@+id/nav_cart"
-            android:icon="@drawable/ic_shopping_cart_black_24dp"
-            android:title="Cart" />
-        <item
-            android:id="@+id/nav_slideshow"
-            android:icon="@drawable/ic_menu_slideshow"
-            android:title="Slideshow" />
+            android:id="@+id/nav_callus"
+            android:icon="@drawable/ic_local_phone_black_24dp"
+            android:title="@string/call_us" />
         <item
             android:id="@+id/nav_sign_out"
             android:icon="@drawable/ic_exit_to_app_black_24dp"
-            android:title="Sign Out" />
+            android:title="@string/sign_out" />
     </group>
 
-    <item android:title="Entertainment">
+    <item android:title="@string/entertainment">
         <menu>
             <item
                 android:id="@+id/nav_music"
                 android:icon="@drawable/ic_music_note_black_24dp"
-                android:title="Music" />
-            <item
-                android:id="@+id/nav_send"
-                android:icon="@drawable/ic_menu_send"
-                android:title="Send" />
+                android:title="@string/music" />
+
         </menu>
     </item>
 

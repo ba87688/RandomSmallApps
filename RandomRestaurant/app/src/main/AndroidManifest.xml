@@ -21,7 +21,18 @@
         <activity
             android:name=".MainNavDrawer"
             android:label="@string/title_activity_main_nav_drawer"
-            android:theme="@style/AppTheme"></activity>
+            android:theme="@style/AppTheme" />
+        <activity android:name=".LostOfFoods" />
+        <activity android:name=".DetailOfFood" />
+        <activity
+            android:name=".foodDetailActivity"
+            android:label="@string/title_activity_food_detail"
+            android:parentActivityName=".MainNavDrawer"
+            android:theme="@style/AppTheme">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.evan.randomrestaurant.MainNavDrawer" />
+        </activity>
     </application>
 
 </manifest>
