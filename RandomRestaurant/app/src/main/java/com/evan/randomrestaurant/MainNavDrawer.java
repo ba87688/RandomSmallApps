@@ -33,10 +33,10 @@ import com.squareup.picasso.Picasso;
 public class MainNavDrawer extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
-    FirebaseDatabase firebaseDatabase;
-    DatabaseReference categoryDatabaseReference;
-    TextView name;
-    RecyclerView recyclerView;
+    private FirebaseDatabase firebaseDatabase;
+    private DatabaseReference categoryDatabaseReference;
+    private TextView name;
+    private RecyclerView recyclerView;
     public final static String  POSITION = "position";
 
     @Override

@@ -17,13 +17,13 @@ import static com.evan.randomrestaurant.MainNavDrawer.POSITION;
 
 public class foodDetailActivity extends AppCompatActivity {
 
-    ImageView imageOfFood;
-    TextView description;
-    FirebaseDatabase firebaseDatabase;
-    DatabaseReference databaseReference;
-    int position;
-    String imageUrl;
-    String name;
+    private ImageView imageOfFood;
+    private TextView description;
+    private FirebaseDatabase firebaseDatabase;
+    private DatabaseReference databaseReference;
+    private int position;
+    private String imageUrl;
+    private String name;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

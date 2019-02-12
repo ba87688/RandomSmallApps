@@ -20,8 +20,8 @@ import com.google.firebase.database.ValueEventListener;
 
 public class LogIn extends AppCompatActivity {
 
-    Button signIn;
-    EditText userName, password;
+    private Button signIn;
+    private EditText userName, password;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
