@@ -22,6 +22,7 @@ public class LogIn extends AppCompatActivity {
 
     private Button signIn;
     private EditText userName, password;
+    public static final String ERROR = "Error";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -46,7 +47,7 @@ public class LogIn extends AppCompatActivity {
                     user_table.addValueEventListener(new ValueEventListener() {
                         @Override
                         public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                            Log.d("dad1", "onDataChange: " + "it dont exist" + userName.getText().toString());
+                            Log.d(ERROR, "onDataChange: " + "it dont exist" + userName.getText().toString());
 
 
 //                        get user info
@@ -54,8 +55,8 @@ public class LogIn extends AppCompatActivity {
                                 User user = dataSnapshot.child(userName.getText().toString()).getValue(User.class);
 
                                 if (user.getPassword().equals(password.getText().toString())) {
-                                    Log.d("mom", "onDataChange: " + user.getPassword().equals(password.getText().toString()));
-                                    Log.d("mom1", "onDataChange: " + userName.getText().toString());
+                                    Log.d(ERROR, "onDataChange: " + user.getPassword().equals(password.getText().toString()));
+                                    Log.d(ERROR, "onDataChange: " + userName.getText().toString());
                                     Intent homeIntent = new Intent(LogIn.this, MainNavDrawer.class);
                                     //get the current user
                                     Toast.makeText(LogIn.this, "Sign in successful!", Toast.LENGTH_SHORT).show();
@@ -64,14 +65,14 @@ public class LogIn extends AppCompatActivity {
                                     startActivity(homeIntent);
                                     finish();
                                 } else {
-                                    Log.d("mom", "onDataChange: " + user.getPassword().equals(password.getText().toString()));
-                                    Log.d("mom1", "onDataChange: " + userName.getText().toString());
-                                    Log.d("mom2", "onDataChange: " + user.getPassword());
+                                    Log.d(ERROR, "onDataChange: " + user.getPassword().equals(password.getText().toString()));
+                                    Log.d(ERROR, "onDataChange: " + userName.getText().toString());
+                                    Log.d(ERROR, "onDataChange: " + user.getPassword());
 
                                     Toast.makeText(LogIn.this, "Sign in not successful!", Toast.LENGTH_SHORT).show();
                                 }
                             } else {
-                                Log.d("dad", "onDataChange: " + "it dont exist");
+                                Log.d(ERROR, "onDataChange: " + "it dont exist");
 
                             }
                         }
