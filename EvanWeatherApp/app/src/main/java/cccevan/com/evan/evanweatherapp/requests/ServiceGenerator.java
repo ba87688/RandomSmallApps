@@ -13,6 +13,8 @@ public class ServiceGenerator {
     private static Retrofit retrofit = retrofitBuilder.build();
 
     private static WeatherApi weatherApi = retrofit.create(WeatherApi.class);
+
+    //this return weather object which has current weather and timezone
     public static WeatherApi getWeatherApi(){return weatherApi;}
 
 }

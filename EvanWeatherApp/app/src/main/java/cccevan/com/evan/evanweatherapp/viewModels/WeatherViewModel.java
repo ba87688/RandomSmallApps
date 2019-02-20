@@ -17,12 +17,12 @@ public class WeatherViewModel extends ViewModel {
         mWeatherRepository = WeatherRepository.getInstance();
     }
 
-    public LiveData<List<Weather>> getWeather(){
+    public LiveData <Weather> getWeather(){
 //        get livedata from the repository.
         return mWeatherRepository.getmWeather();
     }
-    public void searchWeatherApi(String query, String loglat){
-        mWeatherRepository.searchWeatherApi(query,loglat);
+    public void searchWeatherApi(){
+        mWeatherRepository.searchWeatherApi();
     }
 
 }

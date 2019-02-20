@@ -5,7 +5,7 @@ public class Constants {
 
     public static final int NETWORK_TIMEOUT = 3000;
 
-    public static final String BASE_URL = "https://api.darksky.net";
+    public static final String BASE_URL = "https://api.darksky.net/";
     public static final String FORECAST = "forecast";
 
 }

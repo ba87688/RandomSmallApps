@@ -22,12 +22,12 @@ public class WeatherRepository {
 
     }
 
-    public LiveData<List<Weather>> getmWeather(){
+    public LiveData<Weather> getmWeather(){
         return mWeatherApiClient.getWeather();
     }
 
-    public void searchWeatherApi(String query, String latlog){
-        mWeatherApiClient.searchWeatherApi(query,latlog);
+    public void searchWeatherApi(){
+        mWeatherApiClient.searchWeatherApi();
 
     }
 }

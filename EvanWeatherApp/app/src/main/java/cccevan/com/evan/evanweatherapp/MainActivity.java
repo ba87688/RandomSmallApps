@@ -28,7 +28,7 @@ public class MainActivity extends BaseActivity {
         findViewById(R.id.test).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                searchWeatherApi("forecast","37.8267,-122.4233");
+                searchWeatherApi();
 
             }
         });
@@ -38,18 +38,15 @@ public class MainActivity extends BaseActivity {
 
     //observe and change the data of the recipe list. this activity is in charge of that
     private void subscribeObservers() {
-        mWeatherViewModel.getWeather().observe(this, new Observer<List<Weather>>() {
+        mWeatherViewModel.getWeather().observe(this, new Observer<Weather>() {
             @Override
-            public void onChanged(@Nullable List<Weather> weathers) {
-//                for (Weather weather : weathers) {
-////                    Log.d("blah", "onChanged: " + weather.getSummary());
-//
-//                }
+            public void onChanged(@Nullable Weather weather) {
+
             }
         });
     }
 
-    private void searchWeatherApi(String query, String lonlat) {
-        mWeatherViewModel.searchWeatherApi(query,lonlat);
+    private void searchWeatherApi() {
+        mWeatherViewModel.searchWeatherApi();
     }
 }

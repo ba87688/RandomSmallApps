@@ -11,20 +11,27 @@ import java.util.concurrent.Future;
 import java.util.concurrent.TimeUnit;
 
 import cccevan.com.evan.evanweatherapp.AppExecutors;
+import cccevan.com.evan.evanweatherapp.models.CurrentWeather;
 import cccevan.com.evan.evanweatherapp.models.Weather;
 import cccevan.com.evan.evanweatherapp.requests.responses.WeatherSearchResponse;
 import cccevan.com.evan.evanweatherapp.util.Constants;
 import retrofit2.Call;
+import retrofit2.Callback;
 import retrofit2.Response;
 
 import static android.content.ContentValues.TAG;
 
 public class WeatherApiClient {
 
-    private static WeatherApiClient instance;
     private RetrieveWeatherRunnable mRetrieveWeatherRunnable;
+
+
     //keep livedata reference
-    private MutableLiveData<List<Weather>> mWeather;
+    private MutableLiveData <Weather> mWeather;
+
+
+    //creating a singleton class
+    private static WeatherApiClient instance;
     public static WeatherApiClient getInstance(){
         if(instance==null){
             instance = new WeatherApiClient();
@@ -32,19 +39,23 @@ public class WeatherApiClient {
         return instance;
     }
 
+
     private WeatherApiClient(){
+
         mWeather = new MutableLiveData<>();
     }
-    public MutableLiveData<List<Weather>> getWeather(){
+
+
+    public MutableLiveData <Weather> getWeather(){
 
         return mWeather;
     }
 
-    public  void searchWeatherApi(String query, String loglat){
+    public  void searchWeatherApi(){
         if(mRetrieveWeatherRunnable!=null){
             mRetrieveWeatherRunnable=null;
         }
-        mRetrieveWeatherRunnable = new RetrieveWeatherRunnable(query, loglat);
+        mRetrieveWeatherRunnable = new RetrieveWeatherRunnable();
 
         //executors in the background tasks
         final Future handler = AppExecutors.getInstance().networkIO().submit(mRetrieveWeatherRunnable);
@@ -56,38 +67,34 @@ public class WeatherApiClient {
             }
         },Constants.NETWORK_TIMEOUT,TimeUnit.MILLISECONDS);
     }
+
+
+
     private class RetrieveWeatherRunnable implements  Runnable{
 
-        private String query;
-        private String loglat;
         boolean cancelRequest;
 
-        public RetrieveWeatherRunnable(String query, String loglat) {
-            this.query = query;
-            this.loglat = loglat;
+        public RetrieveWeatherRunnable() {
+
             cancelRequest = false;
         }
 
         @Override
         public void run() {
             try {
-                Response response = getWeather(query,loglat).execute();
-                if(cancelRequest){
+                Response response = getW().execute();
+                if(!response.isSuccessful()){
+                    Log.d(TAG, "one response: call: " + response.code());
                     return;
                 }
-                //            check if request was successful
+                String w = ((WeatherSearchResponse)response.body()).getTimezone();
+                Log.d(TAG, "one response: call: " + w);
 
-                if(response.isSuccessful()){
-//                    if successful, get list of current weather
-                    List<Weather> list =
-                            new ArrayList<>((((WeatherSearchResponse)response.body()).getCurrentWeather()));
 
-                    mWeather.postValue(list);
-                }
+                CurrentWeather weather = ((WeatherSearchResponse)response.body()).getCurrentWeather();
             } catch (IOException e) {
                 e.printStackTrace();
             }
-
 
 
         }
@@ -97,15 +104,17 @@ public class WeatherApiClient {
             cancelRequest=true;
         }
 
-        //this goes to the interface and does the search for us
-        private Call<WeatherSearchResponse> getWeather(String query, String loglat){
-            return ServiceGenerator.getWeatherApi().searchWeather(
-                    Constants.API_KEY,
-                    query,
-                    loglat
-            );
+        //this goes to the interface and.gets the Weather which has timezone and currentweather
+        private WeatherApi getWeather(){
+            return ServiceGenerator.getWeatherApi();
 
         }
+        private Call<WeatherSearchResponse> getW(){
+            return ServiceGenerator.getWeatherApi().getWeather();
+        }
+//        private Call<WeatherSearchResponse> getWeathers(){
+//            return ServiceGenerator.getWeatherApi().;
+//        }
     }
 
 }
