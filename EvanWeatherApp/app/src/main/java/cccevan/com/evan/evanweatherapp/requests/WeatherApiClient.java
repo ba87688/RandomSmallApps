@@ -92,6 +92,11 @@ public class WeatherApiClient {
 
 
                 CurrentWeather weather = ((WeatherSearchResponse)response.body()).getCurrentWeather();
+
+                Weather weather1 = new Weather(((WeatherSearchResponse)response.body()).getTimezone(),
+                        ((WeatherSearchResponse)response.body()).getCurrentWeather());
+
+                mWeather.postValue(weather1);
             } catch (IOException e) {
                 e.printStackTrace();
             }

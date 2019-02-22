@@ -7,6 +7,12 @@ import android.os.Parcelable;
 import com.google.gson.annotations.SerializedName;
 
 public class Weather implements Parcelable {
+
+    public Weather(String timezone, CurrentWeather currentWeather) {
+        this.timezone = timezone;
+        this.currentWeather = currentWeather;
+    }
+
     @SerializedName("timezone")
     private String timezone;
 

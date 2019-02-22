@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_horizontal"
+    >
+    <LinearLayout
+        android:id="@+id/weather_panel"
+        android:orientation="vertical"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+      >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/location"
+            android:textColor="@color/black"
+            android:text="Dummy Text"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="9dp"
+            android:layout_gravity="center_horizontal"/>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <ImageView
+                android:id="@+id/image_weather"
+                android:layout_width="90dp"
+                android:layout_height="90dp"
+                android:layout_marginRight="13dp"
+                android:src="@drawable/rainnight"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/lightBlue"
+                android:text="56 C"
+                android:textSize="54sp"
+                android:textStyle="bold"
+                android:id="@+id/temperature_text"/>
+
+        </LinearLayout>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:id="@+id/summary_text"
+            android:layout_marginBottom="5dp"
+            android:text="Dummy Text"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:layout_gravity="center_horizontal"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/lightGreen"
+            android:id="@+id/date_and_time"
+            android:text="Dummy Text"
+            android:textSize="19sp"
+            android:textStyle="bold"
+            android:layout_gravity="center_horizontal"/>
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="15dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/border"
+            android:stretchColumns="*">
+
+            <TableRow
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                >
+                <TextView
+                    android:textColor="@color/white"
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:text="Feels like: "/>
+                <TextView
+                    android:text="red red red"
+                    android:id="@+id/feedslike_text"
+                    android:textColor="@color/white"
+                    android:layout_marginLeft="8dp"
+                    android:layout_column="1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+            </TableRow>
+            <TableRow
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                >
+                <TextView
+                    android:textColor="@color/white"
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:text="Wind speed:"/>
+                <TextView
+                    android:text="red red red"
+                    android:id="@+id/windspeed_text"
+                    android:textColor="@color/white"
+                    android:layout_marginLeft="8dp"
+                    android:layout_column="1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+            </TableRow>
+        </TableLayout>
+
+    </LinearLayout>
+
+</RelativeLayout>
