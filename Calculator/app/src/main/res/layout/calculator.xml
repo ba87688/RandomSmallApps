@@ -252,17 +252,18 @@
         android:onClick="process"
 
         />
+
     <Button
-        android:text="@string/erase"
         android:id="@+id/button_zero2"
         style="@style/NumbersButtons"
-        android:layout_column="2"
         android:layout_row="4"
+        android:layout_column="2"
         android:layout_columnWeight="1"
-        android:layout_marginTop="@dimen/margin"
         android:layout_marginLeft="@dimen/margin"
+        android:layout_marginTop="@dimen/margin"
         android:layout_marginRight="@dimen/margin"
         android:onClick="process"
+        android:text="@string/dot"
 
         />
 
