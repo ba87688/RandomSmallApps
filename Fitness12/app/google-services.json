@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "1048463800004",
+    "firebase_url": "https://fitness12-d213c.firebaseio.com",
+    "project_id": "fitness12-d213c",
+    "storage_bucket": "fitness12-d213c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1048463800004:android:40b39f4f5c79a6ff",
+        "android_client_info": {
+          "package_name": "weatherapp.cccevan.com.evan.fitness12"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1048463800004-hphlk6m7faaedccfmgp7a1vrqv2t5d26.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "weatherapp.cccevan.com.evan.fitness12",
+            "certificate_hash": "8822f21723e3a5f9e7044705c892637d133380be"
+          }
+        },
+        {
+          "client_id": "1048463800004-ojr8hdd7fgsv04oa1l572tbpmmkob5l1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBJRamABzWi8m_qmvVwKPe7M-gS-ifPWyE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1048463800004-ojr8hdd7fgsv04oa1l572tbpmmkob5l1.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">Fitness1.2</string>
+    <string name="email">Email</string>
+    <string name="username">Username</string>
+    <string name="title_activity_sign_up">SignUp</string>
+    <string name="password">Password</string>
+
+    <string name="api_key">AIzaSyAmVXW97VWn67Re89lIOm-N7Q1qISwmSco</string>
+    <string name="daily_staps">Daily Staps:</string>
+    <string name="total_steps">Total Steps:</string>
+    <string name="daily">daily_steps: </string>
+    <string name="sign_out">sign out</string>
+    <string name="start_reminders_at_work">Start reminders at work</string>
+</resources>
